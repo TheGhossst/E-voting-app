@@ -50,7 +50,19 @@ const Login: React.FC = () => {
                         Login
                     </button>
                 </div>
-            </div>  
+            </div>
+            {showPopup && (
+                <div className = {styles.popup}>
+                    <div className = {styles.popupContent}>
+                        <span className = {styles.popupMessage}>{popupMessage}</span>
+                        <button 
+                            onClick = {closePopup}
+                            className = {styles.popupButton}>
+                            OK
+                        </button>
+                    </div>
+                </div>
+            )}  
         </div>
   );
 };
