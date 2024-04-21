@@ -4,7 +4,26 @@
     align-items: center;
     height: 100vh;
     background-color: #000000;
-  }
+}
+
+.leftSection {
+    flex: 1;
+    padding: 2rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.rightSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .title {
     font-size: 2rem;
