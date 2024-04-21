@@ -29,30 +29,13 @@ const Login: React.FC = () => {
     };
 
     return (
-        <div className={styles.container}>
-        <h1 className={styles.title}>E-Voting Login</h1>
-        <div className={styles.loginContainer}>
-            <input
-                type="text"
-                placeholder="Enter MBCET UID"
-                value={uid}
-                onChange={handleUidChange}
-                className={styles.input}
-            />
-            <button onClick={handleLogin} className={styles.button}>
-                Login
-            </button>
-        </div>
-        {showPopup && (
-            <div className={styles.popup}>
-            <div className={styles.popupContent}>
-                <span className={styles.popupMessage}>{popupMessage}</span>
-                <button onClick={closePopup} className={styles.popupButton}>
-                    OK
-                </button>
-            </div>
-            </div>
-        )}
+        <div className ={styles.container}>
+            <div className = {styles.leftSection}>
+                <h1 className = {styles.title}>E-Voting</h1>
+                <p className = {styles.description}>
+                    Lorem ipsum dolor sit amet consect
+                </p>
+            </div>  
         </div>
   );
 };
