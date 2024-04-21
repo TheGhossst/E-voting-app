@@ -1,7 +1,5 @@
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     background-color: #000000;
 }
@@ -10,7 +8,10 @@
     flex: 1;
     padding: 2rem;
     color: #ffffff;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .description {
@@ -20,15 +21,30 @@
 
 .rightSection {
     flex: 1;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.rulesLabel {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.rules {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rules li {
+    margin-bottom: 0.5rem;
 }
 
 .input {
@@ -56,13 +72,11 @@
 }
 
 .loginContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffffff;
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
 }
   
 .popup {

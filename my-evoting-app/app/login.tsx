@@ -32,24 +32,33 @@ const Login: React.FC = () => {
         <div className ={styles.container}>
             <div className = {styles.leftSection}>
                 <h1 className = {styles.title}>E-Voting</h1>
-                <p className = {styles.description}>
-                    Lorem ipsum dolor sit amet consect
-                </p>
+                <h2 className = {styles.rulesLabel}>
+                    Rules:
+                </h2>
+                <ul className={styles.rules}>
+                    <li>1.  Only registered users can vote.</li>
+                    <li>2.  Vote </li>
+                </ul>
             </div>
             <div className = {styles.rightSection}>
-                <div className = {styles.loginContainer}>
+                <h2 className={styles.formTitle}>Sign in to E-Voting</h2>
+                <div className={styles.divider}> </div>
+                <div className = {styles.formGroup}>
+                <label htmlFor="uid">MBCET UID</label>
                     <input
-                        type = "text"
-                        placeholder ='Enter MBCET UID'
-                        value = {uid}
-                        onChange ={handleUidChange}
-                        className = {styles.input} />
+                        type="text"
+                        id="uid"
+                        name="uid"
+                        placeholder="Enter MBCET UID"
+                        value={uid}
+                        onChange={handleUidChange}
+                    />
+                </div>
                     <button  
                         onClick={handleLogin} 
                         className= {styles.button}>
                         Login
                     </button>
-                </div>
             </div>
             {showPopup && (
                 <div className = {styles.popup}>
