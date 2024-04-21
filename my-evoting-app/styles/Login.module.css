@@ -5,4 +5,10 @@
     justify-content: center;
     height: 100vh;
     background-color: #000000;
-  }
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
