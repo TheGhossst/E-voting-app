@@ -35,6 +35,21 @@ const Login: React.FC = () => {
                 <p className = {styles.description}>
                     Lorem ipsum dolor sit amet consect
                 </p>
+            </div>
+            <div className = {styles.rightSection}>
+                <div className = {styles.loginContainer}>
+                    <input
+                        type = "text"
+                        placeholder ='Enter MBCET UID'
+                        value = {uid}
+                        onChange ={handleUidChange}
+                        className = {styles.input} />
+                    <button  
+                        onClick={handleLogin} 
+                        className= {styles.button}>
+                        Login
+                    </button>
+                </div>
             </div>  
         </div>
   );
