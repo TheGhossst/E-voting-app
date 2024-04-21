@@ -5,11 +5,15 @@ const Login: React.FC = () => {
     const [uid, setUid] = useState<string>('');
     const [showPopup, setShowPopup] = useState<boolean>(false);
     const [popupMessage, setPopupMessage] = useState<string>('');
-    
+
     const handleUidChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUid(e.target.value);
       };
     
+    const handleLogin = async () => {
+        
+    };
+
 
 return (
     <div className={styles.container}>
