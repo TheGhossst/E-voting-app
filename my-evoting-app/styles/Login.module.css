@@ -12,3 +12,15 @@
     margin-bottom: 2rem;
     color: #ffffff;
 }
+
+.input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    width: 100%;
+    max-width: 300px;
+    color: #000000;
+}
+
+
