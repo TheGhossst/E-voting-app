@@ -1,79 +1,70 @@
-'use client';  //You're importing a component that needs useState. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
-
+'use client'
 import React, { useState } from 'react';
 import styles from '../styles/Login.module.css';
 
-const Login: React.FC = () => {
-    const [uid, setUid] = useState<string>('');
-    const [showPopup, setShowPopup] = useState<boolean>(false);
-    const [popupMessage, setPopupMessage] = useState<string>('');
+const LoginPage = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
 
-    const handleUidChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUid(e.target.value);
-      };
-    
-    const handleLogin = async () => {
-        const isValidUid = uid === 'blah';
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-        if (isValidUid) {
-            setPopupMessage('Successfully logged in');
-            setShowPopup(true);
-          } else {
-            setPopupMessage('Login failed');
-            setShowPopup(true);
-          }
-    };
+    const dummyEmail = 'blah';
+    const dummyPassword = 'blah';
 
-    const closePopup = () => {
-        setShowPopup(false);
-    };
+    if (email === dummyEmail && password === dummyPassword) {
+      setPopupMessage('Successfully logged in');
+      setShowPopup(true);
+    } else {
+      setPopupMessage('Login failed, try again');
+      setShowPopup(true);
+    }
+  };
 
-    return (
-        <div className ={styles.container}>
-            <div className = {styles.leftSection}>
-                <h1 className = {styles.title}>E-Voting</h1>
-                <h2 className = {styles.rulesLabel}>
-                    Rules:
-                </h2>
-                <ul className={styles.rules}>
-                    <li>1.  Only registered users can vote.</li>
-                    <li>2.  Vote </li>
-                </ul>
-            </div>
-            <div className = {styles.rightSection}>
-                <h2 className={styles.formTitle}>Sign in to E-Voting</h2>
-                <div className={styles.divider}> </div>
-                <div className = {styles.formGroup}>
-                <label htmlFor="uid">MBCET UID</label>
-                    <input
-                        type="text"
-                        id="uid"
-                        name="uid"
-                        placeholder="Enter MBCET UID"
-                        value={uid}
-                        onChange={handleUidChange}
-                    />
-                </div>
-                    <button  
-                        onClick={handleLogin} 
-                        className= {styles.button}>
-                        Login
-                    </button>
-            </div>
-            {showPopup && (
-                <div className = {styles.popup}>
-                    <div className = {styles.popupContent}>
-                        <span className = {styles.popupMessage}>{popupMessage}</span>
-                        <button 
-                            onClick = {closePopup}
-                            className = {styles.popupButton}>
-                            OK
-                        </button>
-                    </div>
-                </div>
-            )}  
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.loginBox}>
+        <h1>E-Voting</h1>
+        <span className={styles.letter}>Login</span>
+        <form onSubmit={handleLogin}>
+          <input
+            type="text"
+            placeholder="Enter your MBCET UID"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={styles.input}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className={styles.input}
+          />
+          <button type="submit" className={styles.loginButton}>
+            LOGIN
+          </button>
+        </form>
+      </div>
+
+      {showPopup && (
+        <div className={styles.popup}>
+          <div className={styles.popupContent}>
+            <span className={styles.closeButton} onClick={handleClosePopup}>
+              &times;
+            </span>
+            <p>{popupMessage}</p>
+          </div>
         </div>
+      )}
+    </div>
   );
 };
 
-export default Login;
+export default LoginPage;
