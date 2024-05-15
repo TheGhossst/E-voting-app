@@ -6,7 +6,7 @@ import Navbar from './navbar';
 const Login: React.FC = () => {
   return (
     <div>
-      <Navbar /> {/* Render the Navbar component */}
+      <Navbar /> {}
       <div className={styles.container}>
         <div className={styles.loginForm}>
           <h2 className={styles.formHeading}>LOGIN FORM</h2>

@@ -1,14 +1,12 @@
-'use client' 
-// navbar.tsx
+'use client' // Navbar.tsx
 import React from 'react';
 import styles from '../styles/Navbar.module.css';
+import Logo from './logo'; 
 
 const Navbar: React.FC = () => {
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>
-        <h1>E-Voting</h1>
-      </div>
+      <Logo /> {}
       <ul className={styles.navLinks}>
         <li>
           <button className={styles.navButton}>Home</button>
