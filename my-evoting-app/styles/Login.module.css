@@ -1,14 +1,18 @@
 /* Login.module.css */
+
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  width: 100vw;
   background-color: #a6e3e9;
   background-image: radial-gradient(#a6e3e9, #71d8e4);
+  position: relative;
+  z-index: 0;
 }
-
 .heading {
   text-align: center;
   font-size: 2rem;
