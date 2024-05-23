@@ -2,7 +2,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import styles from '../styles/Login.module.css';
 import Navbar from './navbar';
 import Popup from './popup';
@@ -34,12 +34,13 @@ const Login: React.FC = () => {
   };
 
   const handleClosePopup = () => {
-    if (showSuccessPopup) {
-      router.push('/2fa');  
-    }
     setShowSuccessPopup(false);
     setShowFailedPopup(false);
   };
+
+  if (showSuccessPopup) {
+    router.push('/twofactor');  
+  }
 
   return (
     <div className={styles.page}>
