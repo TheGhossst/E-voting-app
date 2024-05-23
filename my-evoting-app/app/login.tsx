@@ -34,9 +34,6 @@ const Login: React.FC = () => {
   };
 
   const handleClosePopup = () => {
-    if (showSuccessPopup) {
-      router.push('/2fa');  
-    }
     setShowSuccessPopup(false);
     setShowFailedPopup(false);
   };
