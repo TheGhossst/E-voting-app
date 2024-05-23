@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "../styles/Navbar.module.css";
 import Logo from "./logo";
-import { House, Info } from "@phosphor-icons/react";
+import { House, Info, X } from "@phosphor-icons/react";
 
 const Navbar: React.FC = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -36,15 +36,30 @@ const Navbar: React.FC = () => {
       </nav>
 
       {isPopupVisible && (
-        <div className={styles.popup}>
+        <div className={styles.popup} onFocus={togglePopup}>
           <div className={styles.popupContent}>
             <span className={styles.close} onClick={closePopup}>
-              &times;
+              <X size={32} />
             </span>
             <h2>Rules</h2>
-            <p>1. Rule one</p>
-            <p>2. Rule two</p>
-            <p>3. Rule three</p>
+            <ul>
+              <li>
+                <h3>Rule 1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit excepturi vitae et quasi obcaecati tempore explicabo dignissimos eos pariatur qui, libero accusantium numquam omnis aliquid eius deserunt? Natus, praesentium exercitationem?</p>
+              </li>
+              <li>
+                <h3>Rule 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit excepturi vitae et quasi obcaecati tempore explicabo dignissimos eos pariatur qui, libero accusantium numquam omnis aliquid eius deserunt? Natus, praesentium exercitationem?</p>
+              </li>
+              <li>
+                <h3>Rule 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit excepturi vitae et quasi obcaecati tempore explicabo dignissimos eos pariatur qui, libero accusantium numquam omnis aliquid eius deserunt? Natus, praesentium exercitationem?</p>
+              </li>
+              <li>
+                <h3>Rule 4</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit excepturi vitae et quasi obcaecati tempore explicabo dignissimos eos pariatur qui, libero accusantium numquam omnis aliquid eius deserunt? Natus, praesentium exercitationem?</p>
+              </li>
+            </ul>
           </div>
         </div>
       )}
