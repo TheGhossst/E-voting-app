@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/popup.module.css';
+import styles from '../styles/Popup.module.css';
 
 interface PopupProps {
   message: string;
@@ -11,7 +11,7 @@ const Popup: React.FC<PopupProps> = ({ message, isOpen, onClose }) => {
   return isOpen ? (
     <div className={styles.popup}>
       <div className={styles.popupContent}>
-        <span className={styles.popupMessage}>{message}</span>
+        <div className={styles.popupMessage}>{message}</div>
         <button className={styles.closeButton} onClick={onClose}>
           Close
         </button>

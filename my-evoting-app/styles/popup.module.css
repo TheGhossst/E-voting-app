@@ -7,31 +7,36 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .popupContent {
-    background-color: #fefefe;
-    margin: 15% auto;
+    background-color: #fff;
     padding: 20px;
-    border: 1px solid #888;
-    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
   }
   
   .popupMessage {
-    color: black;
-    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 16px;
   }
   
   .closeButton {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
   }
   
-  .closeButton:hover,
-  .closeButton:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  .closeButton:hover {
+    background-color: #0056b3;
   }
