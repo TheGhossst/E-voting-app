@@ -40,7 +40,7 @@ const Login: React.FC = () => {
       <Navbar />
       <div className={styles.container}>
         <div className={styles.loginForm}>
-          <h2 className={styles.formHeading}>LOGIN FORM</h2>
+          <h2 className={styles.formHeading}>LOGIN</h2>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
