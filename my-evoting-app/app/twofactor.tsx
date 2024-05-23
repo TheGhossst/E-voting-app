@@ -2,10 +2,9 @@
 import React, { useState } from 'react';
 import styles from '../styles/2fa.module.css';
 
-const userEmail = 'user@example.com';
-const userPhoneNumber = '+1234567890';
-
 const TwoFactorAuth: React.FC = () => {
+  const userEmail = 'user@example.com';
+  const userPhoneNumber = '+1234567890';
   const [selectedOption, setSelectedOption] = useState<'email' | 'phone' | 'authenticator' | null>(null);
   const [code, setCode] = useState('');
   const [isVerified, setIsVerified] = useState(false);
