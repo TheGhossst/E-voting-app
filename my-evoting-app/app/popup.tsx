@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/Popup.module.css';
+import styles from '../styles/popup.module.css';
 
 interface PopupProps {
   message: string;
