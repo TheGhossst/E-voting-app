@@ -1,6 +1,8 @@
+//login.tsx
 'use client'
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import styles from '../styles/Login.module.css';
 import Navbar from './navbar';
 import Popup from './popup';
@@ -10,6 +12,7 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('');
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [showFailedPopup, setShowFailedPopup] = useState(false);
+  const router = useRouter();
 
   const handleIdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setId(e.target.value);
@@ -31,6 +34,9 @@ const Login: React.FC = () => {
   };
 
   const handleClosePopup = () => {
+    if (showSuccessPopup) {
+      router.push('/2fa');  
+    }
     setShowSuccessPopup(false);
     setShowFailedPopup(false);
   };

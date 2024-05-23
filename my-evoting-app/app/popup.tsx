@@ -1,4 +1,5 @@
-'use client' //popup.tsx
+//popup.tsx
+'use client' 
 import React from 'react';
 import styles from '../styles/popup.module.css';
 
