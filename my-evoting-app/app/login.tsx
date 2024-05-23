@@ -36,7 +36,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className={styles.page}>
       <Navbar />
       <div className={styles.container}>
         <div className={styles.loginForm}>

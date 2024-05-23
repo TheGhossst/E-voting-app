@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styles from "../styles/Navbar.module.css";
 import Logo from "./logo";
+import { House, Info } from "@phosphor-icons/react";
 
 const Navbar: React.FC = () => {
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -21,23 +22,16 @@ const Navbar: React.FC = () => {
         <ul className={styles.navLinks}>
           <li key="home">
             <button className={styles.navButton} role="button">
-              Home
+            <House size={32} />
             </button>
           </li>
-          <li key="about">
             <button
               className={styles.navButton}
               role="button"
               onClick={togglePopup}
             >
-              About
+              <Info size={32} />
             </button>
-          </li>
-          <li key="contact">
-            <button className={styles.navButton} role="button">
-              Contact
-            </button>
-          </li>
         </ul>
       </nav>
 
