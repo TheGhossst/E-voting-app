@@ -1,56 +1,77 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.7.0 <0.9.0;
 
-contract VotingContract {
-    struct Voter {
-        bool hasVoted;
-        uint256 voteCount;
-    }
-
+contract Ballot {
     struct Candidate {
-        string name;
-        uint256 voteCount;
+        bytes32 name;
+        uint voteCount;
     }
 
-    mapping(address => Voter) public voters;
+    struct Voter {
+        bool voted;
+    }
+
+    address private owner;
     Candidate[] public candidates;
+    mapping(address => Voter) public voters;
+    address payable recipient = payable(0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2);
+    uint public voterCount;
+    uint public votingLimit;
+    bool public votingClosed;
 
-    event VoteCast(address voter, uint256 candidateId);
-
-    constructor(string[] memory _candidateNames) {
-        for (uint256 i = 0; i < _candidateNames.length; i++) {
-            candidates.push(Candidate({
-                name: _candidateNames[i],
-                voteCount: 0
-            }));
-        }
+    modifier Owner {
+        require(msg.sender == owner, "The action can only be authorized by the owner");
+        _;
     }
 
-    function vote(uint256 candidateId) public {
-        require(!voters[msg.sender].hasVoted, "You have already voted.");
-        bool candidateExists = false;
-        for (uint256 i = 0; i < candidates.length; i++) {
-            if (i == candidateId) {
-                candidateExists = true;
+    constructor(bytes32[] memory _candidateNames, uint _votingLimit) {
+        owner = msg.sender;
+        votingLimit = _votingLimit;
+        for (uint i = 0; i < _candidateNames.length; i++) {
+            candidates.push(Candidate({name: _candidateNames[i], voteCount: 0}));
+        }
+        votingClosed = false;
+    }
+
+    function giveVoteRights(address) public payable Owner {
+        require(msg.value == 1000, "Insufficient funds");
+        recipient.transfer(1000);
+        voters[recipient].voted = false;
+    }
+
+    function addCandidates(bytes32 _candidateName) public Owner {
+        require(!votingClosed, "Voting is closed, and no more candidates can be added");
+        candidates.push(Candidate({name: _candidateName, voteCount: 0}));
+    }
+
+    function readOwner() public view returns (address) {
+        return owner;
+    }
+
+    function readCandidates() public view returns (Candidate[] memory) {
+        return candidates;
+    }
+
+    function vote(bytes32 _candidateName) public {
+        require(!votingClosed, "Voting is closed, and no more votes can be cast");
+        require(!voters[msg.sender].voted, "This person has already voted");
+        uint _done = 0;
+        for (uint i = 0; i < candidates.length; i++) {
+            if (candidates[i].name == _candidateName) {
+                candidates[i].voteCount++;
+                voters[msg.sender].voted = true;
+                voterCount++;
+                _done = 1;
                 break;
             }
         }
-        
-        require(candidateExists, "Invalid candidate ID.");
-
-        voters[msg.sender].hasVoted = true;
-        voters[msg.sender].voteCount++;
-        candidates[candidateId].voteCount++;
-
-        emit VoteCast(msg.sender, candidateId);
+        require(_done == 1, "No such candidates exist");
+        if (voterCount >= votingLimit) {
+            closeVoting();
+        }
     }
 
-    function getCandidateVotes(uint256 candidateId) public view returns (uint256) {
-        require(candidateId < candidates.length, "Invalid candidate ID.");
-        return candidates[candidateId].voteCount;
-    }
-
-    function getVoterStatus(address voterAddress) public view returns (bool, uint256) {
-        return (voters[voterAddress].hasVoted, voters[voterAddress].voteCount);
+    function closeVoting() private {
+        votingClosed = true;
     }
 }
