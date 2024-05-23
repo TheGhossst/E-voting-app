@@ -1,11 +1,18 @@
 /* Navbar.module.css */
 .navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbarContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: white;
-  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .navLinks {
@@ -16,52 +23,57 @@
 }
 
 .navLinks li {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
 }
 
 .navButton {
   background-color: transparent;
-  color: white;
+  color: #fff;
   border: none;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border-radius: 4px;
 }
 
 .navButton:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
 .popup {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  border-radius: 5px;
-  z-index: 1000; 
-  width: 80%; 
-  max-width: 500px; 
-  max-height: 80%; 
-  overflow-y: auto; 
+  padding: 2rem;
+  border-radius: 8px;
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+  max-height: 80%;
+  overflow-y: auto;
 }
-
 
 .popupContent {
   background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
+  padding: 2rem;
+  border-radius: 8px;
   text-align: center;
   position: relative;
-  color: #000;
+  color: #333;
 }
 
 .close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  color: #000;
+  color: #666;
+}
+
+.close:hover {
+  color: #333;
 }

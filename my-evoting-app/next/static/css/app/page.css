@@ -1,0 +1,231 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./styles/Login.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+/* Login.module.css */
+
+
+.Login_container__DPp2Z {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #a6e3e9;
+  background-image: radial-gradient(#a6e3e9, #71d8e4);
+  position: relative;
+  z-index: 0;
+}
+.Login_heading___Ubp0 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+}
+
+.Login_loginForm__Es0pH {
+  background-color: white;
+  padding: 4rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  height: 400px;
+  margin-top: 2rem; 
+}
+
+.Login_formHeading__wYHSW {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: black;
+  text-align: center;
+}
+
+.Login_input__GbcAp {
+  display: block;
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  color: black;
+  font-size: 1rem;
+}
+
+.Login_signInButton__E2q57 {
+  display: block;
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.Login_navbar__Q1jHs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+
+.Login_logo__i82h_ h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.Login_navLinks__OJf0k {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Login_navLinks__OJf0k li {
+  margin-left: 1rem;
+}
+
+.Login_navButton__E6_4X {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Login_navButton__E6_4X:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./styles/Navbar.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+/* Navbar.module.css */
+.Navbar_navbar__zhZYq {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Navbar_navbarContainer__vA6Ad {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.Navbar_navLinks__fa9HS {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Navbar_navLinks__fa9HS li {
+  margin-left: 1.5rem;
+}
+
+.Navbar_navButton__Syhc0 {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.Navbar_navButton__Syhc0:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.Navbar_popup__cd8kM {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  border-radius: 8px;
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.Navbar_popupContent___cR1P {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  color: #333;
+}
+
+.Navbar_close__FrcH4 {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.Navbar_close__FrcH4:hover {
+  color: #333;
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./styles/popup.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+.popup_popup__R2HlI {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup_popupContent__PAQw5 {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+  }
+  
+  .popup_popupMessage__VvC2C {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  
+  .popup_closeButton__gUSwd {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .popup_closeButton__gUSwd:hover {
+    background-color: #0056b3;
+  }
