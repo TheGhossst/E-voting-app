@@ -1,6 +1,7 @@
-// 2fa.tsx
+//twofactor.tsx
+'use client'
 import React, { useState } from 'react';
-import styles from '../styles/2fa.module.css';
+import styles from '../styles/twofactor.module.css';
 
 const TwoFactorAuth: React.FC = () => {
   const userEmail = 'user@example.com';
